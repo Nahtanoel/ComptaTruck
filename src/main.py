@@ -13,7 +13,7 @@ def init():
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
 
-        c.execute('''CREATE TABLE ComptaTruck (numeroFacture number, libelleFacture text, nomFournisseur text, factureHT number, factureTTC number, dateAcquitement text, lienVersfichier text)''')
+        c.execute('''CREATE TABLE ComptaTruck (numeroFacture number, libelleFacture text, nomFournisseur text, factureHT number, factureTTC number, dateAcquitement date, lienVersfichier text)''')
 
         conn.commit()
         conn.close()
