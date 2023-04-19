@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Depot d'une nouvelle ligne de compta</h1>
+<form action="http://127.0.0.1:5000/ajoutLignes" method="post" enctype="multipart/form-data">
+    <label for="numFact">Numero facture:</label>
+    <input type="number" id="numFact" name="numFact" required><br><br>
+
+    <label for="libFact">Libellé facture:</label>
+    <input type="text" id="libFact" name="libFact" required><br><br>
+
+    <label for="nomFournisseur">Nom fournisseur:</label>
+    <input type="text" id="nomFournisseur" name="nomFournisseur" required><br><br>
+
+    <label for="factureHT">Montant facture HT</label>
+    <input type="number" id="factureHT" name="factureHT" required><br><br>
+
+    <label for="factureTTC">Montant facture TTC (HT + 20,6%)</label>
+    <input type="number" id="factureTTC" name="factureTTC" required><br><br>
+
+    <label for="dateD">Date acquittement</label>
+    <input type="date" id="dateD" name="dateD" required><br><br>
+
+    <label for="fichier">Facture au format PDF</label>
+    <input type="file" id="fichier" accept=".pdf" name="fichier" required ><br><br>
+    <input type="submit" value="Envoyer">
+  </form>
+    
+
+{% endblock %}

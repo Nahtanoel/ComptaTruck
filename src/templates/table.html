@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table table-striped">
+    <tr>
+        <th scope="col">Numéro de facture</th>
+        <th scope="col">Libellé de la facture</th>
+        <th scope="col">Nom du fournisseur</th>
+        <th scope="col">Facture HT</th>
+        <th scope="col">Facture TTC</th>
+        <th scope="col">Date d'acquitement</th>
+        <th scope="col">Lien vers le fichier</th>
+    </tr>
+    {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td><a href="/download/{{ row[6] }}">{{ row[6] }}</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
